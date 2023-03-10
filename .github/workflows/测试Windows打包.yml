@@ -26,7 +26,7 @@ jobs:
           path: InnoSetup
       - name: 测试Windows打包
         env:
-          PYTHONIOENCODING: "gbk"
+          PYTHONIOENCODING: "utf-8"
         shell: pwsh
         run: |
           python test.py
