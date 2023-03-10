@@ -1,0 +1,30 @@
+name: 测试测试Windows终端编码格式
+
+on:
+  push:
+
+jobs:
+  release:
+    name: ${{ matrix.os }}
+    runs-on:  ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["windows-latest"] # "ubuntu-latest", "windows-latest", "macos-latest"
+    steps:
+      - name: 克隆代码
+        uses: actions/checkout@v3
+      - name: Windows 准备Python3.6 X86 环境
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.6"
+          architecture: x86
+      - name: Windows操作系统安装Inno Setup 下载
+        uses: actions/checkout@v3
+        with:
+          repository: jadehh/InnoSetup
+          path: InnoSetup
+      - name: 测试Windows打包
+        shell: pwsh
+        run: |
+          python test.py
