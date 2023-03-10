@@ -25,6 +25,8 @@ jobs:
           repository: jadehh/InnoSetup
           path: InnoSetup
       - name: 测试Windows打包
+        env:
+          PYTHONIOENCODING: "utf-8"
         shell: pwsh
         run: |
           python test.py
