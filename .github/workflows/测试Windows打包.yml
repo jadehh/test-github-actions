@@ -29,5 +29,6 @@ jobs:
           PYTHONIOENCODING: "gbk"
         shell: pwsh
         run: |
+          chcp 936
           python test.py
 
