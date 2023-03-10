@@ -74,10 +74,9 @@ def packSetup(args, exec_path, uuid,output_name=None):
                 for p_file in file.split(exec_path)[-1].split("\\")[:-1]:
                     if p_file:
                         path = path + "\\" + p_file
-                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion\n'.format(file.encode("utf-8").decode("gbk"), '{app}', path)
+                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion\n'.format(file, '{app}', path)
             else:
-                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion \n'.format(file.encode("utf-8").decode("gbk"), '{app}', "")
-            print(file.encode("utf-8").decode("gbk"))
+                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion \n'.format(file, '{app}', "")
             content = content + cmd_str
         content_back = ';[Registry]\n' \
                        ';开机启动\n' \
@@ -176,7 +175,7 @@ def packSetup(args, exec_path, uuid,output_name=None):
                        "end;\n".format("{cmd}", get_app_name(args) + ".exe", "C:", get_app_name(args), "C:",
                                        get_app_name(args))
         content = content + content_code
-        f.write(content.encode("gbk"))
+        f.write(content.encode("ANSI"))
     inno_setup_path = os.path.join(os.getcwd(), "InnoSetup")
     if os.path.exists(inno_setup_path):
         print("Inno Setup Path exists,dir:{}".format(inno_setup_path))
