@@ -172,7 +172,6 @@ def packSetup(args, exec_path, uuid,output_name=None):
                        "end;\n".format("{cmd}", get_app_name(args) + ".exe", "C:", get_app_name(args), "C:",
                                        get_app_name(args))
         content = content + content_code
-        print(content)
         f.write(content.encode("gbk"))
     inno_setup_path = os.path.join(GetPreviousDir(os.getcwd()), "InnoSetup")
     if os.path.exists(inno_setup_path):
