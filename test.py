@@ -74,10 +74,10 @@ def packSetup(args, exec_path, uuid,output_name=None):
                 for p_file in file.split(exec_path)[-1].split("\\")[:-1]:
                     if p_file:
                         path = path + "\\" + p_file
-                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion\n'.format(file, '{app}', path)
+                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion\n'.format(file.encode("utf-8").decode("gbk"), '{app}', path)
             else:
-                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion \n'.format(file, '{app}', "")
-
+                cmd_str = 'Source: "{}"; DestDir: "{}\\{}"; Flags: ignoreversion \n'.format(file.encode("utf-8").decode("gbk"), '{app}', "")
+            print(file.encode("utf-8").decode("gbk"))
             content = content + cmd_str
         content_back = ';[Registry]\n' \
                        ';开机启动\n' \
