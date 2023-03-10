@@ -176,7 +176,7 @@ def packSetup(args, exec_path, uuid,output_name=None):
                                        get_app_name(args))
         content = content + content_code
         print(content)
-        f.write(content.encode("gbk").decode("gbk"))
+        f.write(content)
     inno_setup_path = os.path.join(os.getcwd(), "InnoSetup")
     if os.path.exists(inno_setup_path):
         print("Inno Setup Path exists,dir:{}".format(inno_setup_path))
