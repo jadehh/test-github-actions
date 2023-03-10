@@ -14,18 +14,6 @@ jobs:
       matrix:
         os: ["windows-latest"] # "ubuntu-latest", "windows-latest", "macos-latest"
     steps:
-#      - name: 测试Appimage
-#        shell: pwsh
-#        run: |
-#          mkdir appimage
-#          cd appimage
-#          wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-x86_64.AppImage
-#          chmod +x appimagetool-x86_64.AppImage
-#          cd ../
-#          appimage/appimagetool-x86_64.AppImage  --appimage-extract
-#          appimage/appimagetool-x86_64.AppImage   squashfs-root appimagetool-x86_64.AppImage
-#          chmod +x appimagetool-x86_64.AppImage
-#          ./appimagetool-x86_64.AppImage
       - name: 克隆代码
         uses: actions/checkout@v3
       - name: Windows 准备Python3.6 X86 环境

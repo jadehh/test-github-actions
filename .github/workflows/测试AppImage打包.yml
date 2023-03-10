@@ -24,4 +24,4 @@ jobs:
           appimage/appimagetool-x86_64.AppImage  --appimage-extract
           appimage/appimagetool-x86_64.AppImage   squashfs-root appimagetool-x86_64.AppImage
           chmod +x appimagetool-x86_64.AppImage
-          ./appimagetool-x86_64.AppImage
+          ./appimagetool-x86_64.AppImage -help
