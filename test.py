@@ -173,7 +173,7 @@ def packSetup(args, exec_path, uuid,output_name=None):
                                        get_app_name(args))
         content = content + content_code
         f.write(content.encode("gbk"))
-    inno_setup_path = os.path.join(GetPreviousDir(os.getcwd()), "InnoSetup")
+    inno_setup_path = os.path.join(os.getcwd(), "InnoSetup")
     if os.path.exists(inno_setup_path):
         print("Inno Setup Path exists,dir:{}".format(inno_setup_path))
         cmd_str = "{} {}".format(os.path.join(inno_setup_path, "ISCC.exe"), os.path.join(os.getcwd(), issname))
