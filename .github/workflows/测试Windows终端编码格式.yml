@@ -2,12 +2,10 @@ name: 测试测试Windows终端编码格式
 
 on:
   push:
-#    tags:
-#      - v[0-9]+.*
 
 jobs:
   release:
-    name: ${{ matrix.os }} 创建Release
+    name: ${{ matrix.os }}
     runs-on:  ${{ matrix.os }}
     strategy:
       fail-fast: false
