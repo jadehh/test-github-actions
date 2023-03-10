@@ -1,0 +1,27 @@
+#name: 测试AppImage打包
+#on:
+#  push:
+##    tags:
+##      - v[0-9]+.*
+#
+#jobs:
+#  release:
+#    name: ${{ matrix.os }} 创建Release
+#    runs-on:  ${{ matrix.os }}
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        os: ["ubuntu-18.04"] # "ubuntu-latest", "windows-latest", "macos-latest"
+#    steps:
+#      - name: 测试Appimage
+#        shell: pwsh
+#        run: |
+#          mkdir appimage
+#          cd appimage
+#          wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-x86_64.AppImage
+#          chmod +x appimagetool-x86_64.AppImage
+#          cd ../
+#          appimage/appimagetool-x86_64.AppImage  --appimage-extract
+#          appimage/appimagetool-x86_64.AppImage   squashfs-root appimagetool-x86_64.AppImage
+#          chmod +x appimagetool-x86_64.AppImage
+#          ./appimagetool-x86_64.AppImage
