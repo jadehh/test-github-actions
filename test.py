@@ -65,6 +65,8 @@ def packSetup(args, exec_path, uuid,output_name=None):
                     os.path.abspath("icons/app_logo.ico"), os.path.abspath("icons/app_logo.ico"), args.name)
 
         for file in file_list:
+            if os.path.exists(file):
+                print("文件存在")
             if len(file.split(exec_path)[-1].split("\\")) > 2:
                 path = ""
                 for p_file in file.split(exec_path)[-1].split("\\")[:-1]:
