@@ -29,4 +29,8 @@ jobs:
           PYTHONIOENCODING: "gbk"
         shell: pwsh
         run: |
+          ls
+          cd releases
+          ls
           python test.py
+
