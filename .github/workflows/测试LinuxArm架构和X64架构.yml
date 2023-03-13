@@ -6,16 +6,21 @@ on:
 
 jobs:
   runs-on: ubuntu-latest
+
   strategy:
-      matrix:
-        arch:
-          - arm64
-          - x86
+    matrix:
+      arch:
+        - arm
+        - arm64
+        - x86
+        - x64
+
   env:
-      BUILD_TARGET: linux
-      BUILD_ARCH: ${{ matrix.arch }}
+    BUILD_TARGET: liunux
+    BUILD_ARCH: ${{ matrix.arch }}
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
-    - name: 测试环境
-      shell: pwsh
-      run: |
-        uname -a
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: 查看环境
+      run: uname -a
