@@ -1,0 +1,19 @@
+name: 测试LinuxArm架构和X64架构
+
+on:
+  push:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch:
+          - arm64
+          - x64
+    steps:
+      - name: 查看系统环境
+        shell: pwsh
+        run: |
+          uname -a
