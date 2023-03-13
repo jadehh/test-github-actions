@@ -17,6 +17,6 @@ jobs:
       BUILD_ARCH: ${{ matrix.arch }}
   steps:
     - name: 测试环境
-    shell: pwsh
-    run: |
+      shell: pwsh
+      run: |
         uname -a
