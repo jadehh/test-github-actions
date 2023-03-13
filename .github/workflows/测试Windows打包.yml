@@ -12,6 +12,10 @@ jobs:
       matrix:
         os: ["windows-latest"] # "ubuntu-latest", "windows-latest", "macos-latest"
     steps:
+      - name: 测试终端输出
+        shell: pwsh
+        run: |
+          chcp
       - name: 克隆代码
         uses: actions/checkout@v3
       - name: Windows 准备Python3.6 X86 环境
@@ -33,5 +37,6 @@ jobs:
       - name: 打包
         shell: pwsh
         run: |
+          chcp 936
           InnoSetup\ISCC.exe test.iss
 
