@@ -6,12 +6,17 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+  runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, [linux, ARM64]]
-    steps:
-      - name: 查看系统环境
-        shell: pwsh
-        run: |
-          uname -a
+        arch:
+          - arm64
+          - x86
+    env:
+      BUILD_TARGET: linux
+      BUILD_ARCH: ${{ matrix.arch }}
+
+    - name: 测试环境
+      shell: pwsh
+      run: |
+        uname -a
