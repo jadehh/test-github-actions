@@ -12,7 +12,8 @@ jobs:
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           docker ps -a
-          docker run  -v /:/root -d jadehh/container_ocr:amd64-packing-1.0.1 bash "python -V"
+          docker run  -v ${PWD}:/root -d jadehh/container_ocr:amd64-packing-1.0.1 bash "echo $(python -V) >> /root/output.txt"
+          cat  ${PWD}/output.txt
 
 
 
