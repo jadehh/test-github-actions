@@ -3,6 +3,17 @@ name: 测试LinuxArm架构和X64架构
 on:
   push:
 jobs:
+  ubuntu_job:
+    # The host should always be Linux
+    runs-on: ubuntu-18.04
+    name: Build on ubuntu-18.04
+    steps:
+      - name: 获取输出
+        # Echo the `uname` output parameter from the `runcmd` step
+        run: |
+          docker ps -a
+
+
   aarch64_job:
     # The host should always be Linux
     runs-on: ubuntu-18.04
@@ -12,7 +23,7 @@ jobs:
         name: 建立aarch64环境
         id: build
         with:
-          arch: amd64
+          arch: aarch64
           distro: ubuntu18.04
 
           # Not required, but speeds up builds by storing container images in
