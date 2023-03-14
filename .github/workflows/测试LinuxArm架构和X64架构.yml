@@ -12,8 +12,8 @@ jobs:
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           docker ps -a
-          docker run  -v ./:/root -it jadehh/container_ocr:amd64-packing-1.0.1
-          python -V
+          docker run  -v ./:/root -d jadehh/container_ocr:amd64-packing-1.0.1 bash "python -V"
+
 
 
   aarch64_job:
