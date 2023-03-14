@@ -26,9 +26,10 @@ jobs:
             uname -a
             cd /artifacts
             echo $(uname -a) >> output.txt
+            echo $(conda -V) >> ouput.txt
 
       - name: 获取输出
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           ls ${PWD}/artifacts/
-          cat output.txt
+          cat ${PWD}/artifacts/output.txt
