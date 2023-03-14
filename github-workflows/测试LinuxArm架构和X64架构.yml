@@ -12,7 +12,7 @@ jobs:
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           docker ps -a
-          docker run -v ${PWD}:/root/jade -d jadehh/container_ocr:amd64-packing-1.0.1 bash -c "nohup /root/miniconda3/envs/python3.6.9/bin/python -V  >> /root/jade/output.txt 2>&1 "
+          docker run -v ${PWD}:/root/jade -d python:3.6.9 bash -c "nohup /root/miniconda3/envs/python3.6.9/bin/python -V  >> /root/jade/output.txt 2>&1 "
           cat  ${PWD}/output.txt
 
 
