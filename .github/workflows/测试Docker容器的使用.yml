@@ -12,7 +12,7 @@ jobs:
       env:
         NODE_ENV: development
       volumes:
-        - ${PWD}:/root/jade
+        - /home/runner:/root/jade
     steps:
       - name: 写入Python环境
         run: echo $(python -v) >> output.txt
