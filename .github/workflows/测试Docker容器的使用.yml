@@ -15,4 +15,8 @@ jobs:
         - /home/runner:/root/jade
     steps:
       - name: 查看Python版本
-        run: python -v
+        run: python -V
+      - name: 下载代码
+        uses: actions/checkout@v3
+      - name: 查看代码是否下载完成
+        run: cat README.md
