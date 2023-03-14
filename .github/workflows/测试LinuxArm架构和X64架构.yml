@@ -8,9 +8,8 @@ jobs:
     runs-on: ubuntu-18.04
     name: Build on ubuntu-18.04 aarch64
     steps:
-      - uses: actions/checkout@v3
       - uses: uraimo/run-on-arch-action@v2
-        name: Run commands
+        name: 建立aarch64环境
         id: build
         with:
           arch: aarch64
@@ -26,9 +25,10 @@ jobs:
           run: |
             uname -a
             cd /artifacts
-            echo $(uname -a) >> output.text
+            echo $(uname -a) >> output.txt
 
-      - name: Get the output
+      - name: 获取输出
         # Echo the `uname` output parameter from the `runcmd` step
         run: |
           ls ${PWD}/artifacts/
+          cat output.txt
