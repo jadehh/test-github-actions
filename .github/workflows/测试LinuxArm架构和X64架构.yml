@@ -26,7 +26,6 @@ jobs:
             uname -a
             conda
             cd /artifacts
-            echo $(uname -a) >> output.txt
             echo $(conda -V) >> ouput.txt
 
       - name: 获取输出
