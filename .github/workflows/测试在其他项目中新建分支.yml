@@ -16,5 +16,11 @@ jobs:
           path: code
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
 
-      - name: 查看代码
-        run: ls -l
+      - name: 新建分支
+        run: |
+          git branch
+          git branch test
+          git commit -m '上传test分支'
+          git push origin test
+
+
