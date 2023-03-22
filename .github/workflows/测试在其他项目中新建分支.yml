@@ -15,13 +15,20 @@ jobs:
           ref: main
           path: code
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-
+      - name: 输出分支名称
+        run: echo ${{ github.ref }}
       - name: 新建分支
         run: |
           cd code
           git branch
           git branch test
+          git config --local user.email "jadehh@live.com"
+          git config --local user.name "jade"
           git commit -m '上传test分支'
-          git push origin test
+      - name: 上传分支
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GH_PAT }}
+            branch: test
 
 
