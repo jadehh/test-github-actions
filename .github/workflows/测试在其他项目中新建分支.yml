@@ -1,0 +1,20 @@
+name: 测试Docker容器的使用
+on:
+  push:
+#    tags:
+#      - v[0-9]+.*
+
+jobs:
+  container-test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 下载代码
+        uses: actions/checkout@v3
+        with:
+          repository: jadehh/jadehh_file
+          ref: main
+          path: code
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+
+      - name: 查看代码
+        run: ls -l
