@@ -18,6 +18,7 @@ jobs:
 
       - name: 新建分支
         run: |
+          cd code
           git branch
           git branch test
           git commit -m '上传test分支'
