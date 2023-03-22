@@ -26,9 +26,9 @@ jobs:
           git config --local user.name "jade"
           git commit -m '上传test分支'
       - name: 上传分支
-          uses: ad-m/github-push-action@master
-          with:
-            github_token: ${{ secrets.GH_PAT }}
-            branch: test
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          branch: test
 
 
