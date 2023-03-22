@@ -20,6 +20,8 @@ jobs:
       - name: 新建分支
         run: |
           cd code
+          git config --global user.email "jadehh@live.com"
+          git config --global user.name "jade"
           git branch test
           git checkout test
           touch test.py
