@@ -22,7 +22,8 @@ jobs:
           cd code
           git branch test
           git checkout test
-          git add .
+          touch test.py
+          git add test.py
           git commit -m '上传test分支'
       - name: 上传分支
         uses: ad-m/github-push-action@master
