@@ -20,11 +20,8 @@ jobs:
       - name: 新建分支
         run: |
           cd code
-          git branch
           git branch test
           git checkout test
-          git config --local user.email "jadehh@live.com"
-          git config --local user.name "jade"
           git add .
           git commit -m '上传test分支'
       - name: 上传分支
