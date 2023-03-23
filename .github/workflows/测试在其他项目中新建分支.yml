@@ -22,10 +22,11 @@ jobs:
           touch test.py
           git add test.py
           git commit -m '上传test分支'
-      - name: 上传分支
-        uses: ad-m/github-push-action@master
+      - name: 查看当前分支信息
         run: |
           ls -l
+      - name: 上传分支
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
           branch: main
