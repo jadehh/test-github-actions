@@ -8,14 +8,14 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     steps:
+      - name: 输出分支名称
+          run: echo ${{ github.ref }}
       - name: 下载代码
         uses: actions/checkout@v3
         with:
           repository: jadehh/jadehh_file
           ref: main
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-      - name: 输出分支名称
-        run: echo ${{ github.ref }}
       - name: 新建分支
         run: |
           git branch test
