@@ -24,7 +24,6 @@ jobs:
           cd code/
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
-          git checkout main
           touch test.py
           git add test.py
           git commit -m '上传test分支'
