@@ -24,13 +24,14 @@ jobs:
           git commit -m '上传test分支'
       - name: 上传分支
         uses: ad-m/github-push-action@master
+        run: |
+          ls -l
         with:
           github_token: ${{ secrets.GH_PAT }}
           branch: main
           repository: jadehh/jadehh_file
           force: true
           directory: .
-          github_url: https://github.com
         env:
           GITHUB_ACTOR: jadehh
 
