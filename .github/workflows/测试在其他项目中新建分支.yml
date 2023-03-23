@@ -19,8 +19,6 @@ jobs:
         run: |
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
-          git branch test
-          git checkout test
           touch test.py
           git add test.py
           git commit -m '上传test分支'
@@ -28,7 +26,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_PAT }}
-          branch: test
           repository: jadehh/jadehh_file
           force: true
           directory: .
