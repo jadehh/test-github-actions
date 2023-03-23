@@ -13,23 +13,18 @@ jobs:
       matrix:
         os: [ "ubuntu-18.04" ] #, "macos-latest", "windows-latest"
     steps:
-      - name: 测试下载其他代码
-        uses: actions/checkout@v3
-        with:
-          repository: jadehh/ContainerOCR
-          ref: 箱号图片抓拍
-          path: code
-          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-      - name: 输出分支名称
-        run: echo ${{ secrets.GH_PAT }}
       - name: 下载代码
         uses: actions/checkout@v3
         with:
           repository: jadehh/jadehh_file
+          path: code
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
       - name: 新建分支
         run: |
+          cd code/
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
+          git checkout main
           touch test.py
           git add test.py
           git commit -m '上传test分支'
@@ -42,8 +37,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           branch: main
           repository: jadehh/jadehh_file
-          force: true
-          directory: .
+          directory: code/
         env:
           GITHUB_ACTOR: jadehh
 
