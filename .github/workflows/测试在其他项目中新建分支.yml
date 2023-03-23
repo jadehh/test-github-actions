@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 输出分支名称
-          run: echo ${{ github.ref }}
+        run: echo ${{ github.ref }}
       - name: 下载代码
         uses: actions/checkout@v3
         with:
