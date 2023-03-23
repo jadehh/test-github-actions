@@ -27,11 +27,12 @@ jobs:
       - name: 上传分支
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           branch: test
           repository: jadehh/jadehh_file
           force: true
           directory: .
-
-
+          github_url: https://github.com
+        env:
+          GITHUB_ACTOR: jadehh
 
