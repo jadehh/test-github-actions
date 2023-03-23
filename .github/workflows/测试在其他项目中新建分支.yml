@@ -27,6 +27,7 @@ jobs:
           git add test.py
       - name: 提交
         run: |
+          cd jadehh_file
           git commit -m '更新分支'
           git push  origin test
 
