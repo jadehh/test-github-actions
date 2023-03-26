@@ -1,0 +1,46 @@
+name: 测试Docker容器的使用
+on:
+  push:
+#    tags:
+#      - v[0-9]+.*
+permissions: write-all
+
+jobs:
+  container-test-job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ "ubuntu-18.04" ] #, "macos-latest", "windows-latest"
+    steps:
+      - name: 下载代码
+        uses: actions/checkout@v3
+        with:
+          repository: jadehh/jadehh_file
+          path: code
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+      - name: 新建分支
+        run: |
+          cd code/
+          git config --global user.email "jadehh@live.com"
+          git config --global user.name "jade"
+          git branch test
+          git checkout test
+          touch test.py
+          git add test.py
+          git tag v1.0.1
+          git commit -m '上传test分支'
+      - name: 查看当前分支信息
+        run: |
+          ls -l
+      - name: 上传分支
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          branch: test
+          repository: jadehh/jadehh_file
+          directory: code/
+          force: true
+        env:
+          GITHUB_ACTOR: jadehh
+
