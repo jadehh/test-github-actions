@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: 测试输出当前分支名称
         run: |
-           echo ##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})
+           echo ${GITHUB_REF#refs/heads/}
