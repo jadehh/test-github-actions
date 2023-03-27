@@ -28,7 +28,6 @@ jobs:
           git checkout test
           touch test.py
           git add test.py
-          git tag -d v1.0.1
           git tag v1.0.1
           git commit -a -m '上传test分支'
       - name: 查看当前分支信息
