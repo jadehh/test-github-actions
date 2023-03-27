@@ -7,11 +7,7 @@ permissions: write-all
 
 jobs:
   container-test-job:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ "ubuntu-18.04" ] #, "macos-latest", "windows-latest"
+    runs-on: ubuntu-latest
     steps:
       - name: 下载代码
         uses: actions/checkout@v3
