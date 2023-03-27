@@ -23,6 +23,7 @@ jobs:
           git checkout ${checkname} -b test
           echo ${checkname}
           rm -r README.md
+          touch test.py
           git add test.py
           git tag v1.0.2
           git commit -a -m '上传test分支'
