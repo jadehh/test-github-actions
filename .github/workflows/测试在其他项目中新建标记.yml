@@ -26,6 +26,7 @@ jobs:
           git config --global user.name "jade"
           checkname=$(git rev-list --max-parents=0 HEAD)
           git checkout ${checkname} -b test
+          echo ${checkname}
           touch test.py
           git add test.py
           git tag v1.0.1
