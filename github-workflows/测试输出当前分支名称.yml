@@ -1,4 +1,4 @@
-name: 测试输出tag名称
+name: 测试输出当前分支名称
 on:
   push:
 #    tags:
@@ -8,6 +8,6 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     steps:
-      - name: 测试输出tag名称
+      - name: 测试输出当前分支名称
         run: |
-           echo ${GITHUB_REF#refs/*/}
+           echo ${GITHUB_REF#refs/heads/}
