@@ -14,13 +14,13 @@ jobs:
         with:
           repository: jadehh/jadehh_file
           path: code
+          fetch-depth: 0  # 显示所有的日志
           token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
       - name: 新建分支
         run: |
           cd code/
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
-          git rev-list --all
           checkname=$(git rev-list --max-parents=0 HEAD)
           git checkout ${checkname} -b test
           echo ${checkname}
