@@ -24,7 +24,7 @@ jobs:
           cd code/
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
-          git rev-list --all | tail -1
+          git rev-list --all
           checkname=$(git rev-list --max-parents=0 HEAD)
           git checkout ${checkname} -b test
           echo ${checkname}
