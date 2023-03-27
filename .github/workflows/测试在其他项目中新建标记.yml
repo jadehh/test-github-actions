@@ -36,7 +36,7 @@ jobs:
           github_token: ${{ secrets.GH_PAT }}
           branch: test
           repository: jadehh/jadehh_file
-          directory: code/
+          directory: .
           force: true
           tags: true
         env:
