@@ -24,7 +24,8 @@ jobs:
           cd code/
           git config --global user.email "jadehh@live.com"
           git config --global user.name "jade"
-          git checkout f700cd483ce9b1abb03733c5d48009f0bc1d30a4 -b test
+          checkname=$(git rev-list --max-parents=0 HEAD)
+          git checkout ${checkname} -b test
           touch test.py
           git add test.py
           git tag v1.0.1
