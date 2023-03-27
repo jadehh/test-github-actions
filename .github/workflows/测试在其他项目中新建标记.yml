@@ -30,7 +30,6 @@ jobs:
           git add test.py
           git tag v1.0.1
           git commit -m '上传test分支'
-          git push --tags
       - name: 查看当前分支信息
         run: |
           ls -l
@@ -42,6 +41,7 @@ jobs:
           repository: jadehh/jadehh_file
           directory: code/
           force: true
+          tags: true
         env:
           GITHUB_ACTOR: jadehh
 
