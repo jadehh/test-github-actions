@@ -1,8 +1,7 @@
-name: 测试输出tag名称
+name: 测试Ubuntu下安装软件
 on:
   push:
-    tags:
-      - v[0-9]+.*
+
 
 jobs:
   container-test-job:
