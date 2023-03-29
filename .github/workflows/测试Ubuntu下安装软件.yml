@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: 测试输出tag名称
         run: |
-           echo ${GITHUB_REF#refs/*/}
+           sudo apt install libfuse2
