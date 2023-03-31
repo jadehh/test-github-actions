@@ -1,12 +1,12 @@
-name: 测试WindowsServer环境
+name: 测试Ubuntu下安装软件
 on:
   push:
 
 
 jobs:
   container-test-job:
-    runs-on: windows-2012
+    runs-on: ubuntu-latest
     steps:
-      - name: 在Windows下输出系统信息
+      - name: 测试安装Ubuntu安装软件
         run: |
-           Systeminfo
+           sudo apt install libfuse2
