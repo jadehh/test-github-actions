@@ -7,6 +7,6 @@ jobs:
   container-test-job:
     runs-on: windows-2012
     steps:
-      - name: 输出系统信息
+      - name: 在Windows下输出系统信息
         run: |
            Systeminfo
