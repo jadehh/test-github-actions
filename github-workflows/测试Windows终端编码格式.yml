@@ -1,18 +1,18 @@
-#name: 测试测试Windows终端编码格式
-#
-#on:
-#  push:
-#
-#jobs:
-#  release:
-#    name: ${{ matrix.os }}
-#    runs-on:  ${{ matrix.os }}
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#        os: ["windows-latest"] # "ubuntu-latest", "windows-latest", "macos-latest"
-#    steps:
-#      - name: 测试终端中文编码
-#        shell: pwsh
-#        run: |
-#          chcp
+name: 测试测试Windows终端编码格式
+
+on:
+  push:
+
+jobs:
+  release:
+    name: ${{ matrix.os }}
+    runs-on:  ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["windows-latest"] # "ubuntu-latest", "windows-latest", "macos-latest"
+    steps:
+      - name: 测试终端中文编码
+        shell: pwsh
+        run: |
+          chcp
